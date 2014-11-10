@@ -11,7 +11,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'omniauth-twitter'
 gem 'geocoder'
-gem 'carrierwave'
+gem 'carrierwave', '0.9.0'  
 
 
 group :development, :test do
