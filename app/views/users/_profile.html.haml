@@ -1,12 +1,17 @@
+%h1 User Info
+  .circular
+  %p
+    %b Image:
+    = image_tag @user.profile_image.url
+  %p
+    %b User Name:
+    = @user.name
 
+  %p
+    %b Email:
+    = @user.email
+  %p
+    %b Favourites:
 
+  
 
-%p
-  %b User Name:
-  = @user.name
-%p
-  %b Image:
-  = image_tag @recipe.recipe_image.url
-%p
-  %b Image:
-  = image_tag @recipe.recipe_image.url

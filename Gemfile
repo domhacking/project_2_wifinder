@@ -12,6 +12,7 @@ gem 'haml-rails'
 gem 'omniauth-twitter'
 gem 'geocoder'
 gem 'carrierwave', '0.9.0'  
+gem 'rmagick'
 
 
 group :development, :test do
