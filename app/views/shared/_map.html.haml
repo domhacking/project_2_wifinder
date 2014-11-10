@@ -2,29 +2,8 @@
 %h1 MAP
 .row
   %input#searchbox.form-control{:placeholder => "Search", :type => "text"}
-    .col-md-6
-      %h3 DIRECTIONS
-      %form#directions_form.row{:role => "search"}
-        / 'FROM' BOX
-        .form-group.col-md-4
-          %input#directions_from.form-control{:placeholder => "From", :type => "text"}
-        / 'TO' BOX
-        .form-group.col-md-4
-          %input#directions_to.form-control.col-md-2{:placeholder => "To", :type => "text"}
-        / TRANSPORT MODE
-        .form-group.col-md-4
-          %select#directions_mode
-            %option{:value => "DRIVING"} Driving
-            %option{:value => "WALKING"} Walking
-            %option{:value => "BICYCLING"} Bike
-            %option{:selected => "", :value => "TRANSIT"} Public transport
-          / SUBMIT BUTTON
-        .form-group.col-md-4
-          %button.btn.btn-default{:type => "submit"} Submit
-    / GEOLOCATION
-    .col-md-6
-      %h3 GEOLOCATION
-      %button#current_position.btn.btn-default Show my position
+  
+
 .row
   #map-container.col-md-8
     #googleMap
