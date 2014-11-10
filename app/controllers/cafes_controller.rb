@@ -1,6 +1,6 @@
 class CafesController < ApplicationController
   before_filter :set_cafe, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!, except: [:index]
   respond_to :html
 
   def index
