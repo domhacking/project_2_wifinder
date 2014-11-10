@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cafe_id: 1
+  user_id: 1
+  rating: 1
+  review: MyText
+  favourite: false
+  cafe_admin: false
+  approved_wifi_user: false
+
+two:
+  cafe_id: 1
+  user_id: 1
+  rating: 1
+  review: MyText
+  favourite: false
+  cafe_admin: false
+  approved_wifi_user: false

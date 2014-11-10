@@ -1,0 +1,49 @@
+= form_for @cafe do |f|
+  - if @cafe.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@cafe.errors.count, "error")} prohibited this cafe from being saved:"
+      %ul
+        - @cafe.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :cafe_name
+    = f.text_field :cafe_name
+  .field
+    = f.label :latitude
+    = f.text_field :latitude
+  .field
+    = f.label :longitude
+    = f.text_field :longitude
+  .field
+    = f.label :building_number
+    = f.text_field :building_number
+  .field
+    = f.label :street_name
+    = f.text_field :street_name
+  .field
+    = f.label :postcode
+    = f.text_field :postcode
+  .field
+    = f.label :cafe_description
+    = f.text_area :cafe_description
+  .field
+    = f.label :opening_hours
+    = f.text_area :opening_hours
+  .field
+    = f.label :contact_email
+    = f.text_field :contact_email
+  .field
+    = f.label :contact_tel
+    = f.text_field :contact_tel
+  .field
+    = f.label :website_link
+    = f.text_field :website_link
+  .field
+    = f.label :wifi_network_name
+    = f.text_field :wifi_network_name
+  .field
+    = f.label :wifi_password
+    = f.text_field :wifi_password
+  .actions
+    = f.submit 'Save'

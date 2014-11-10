@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cafe_name: MyString
+  latitude: 1.5
+  longitude: 1.5
+  building_number: MyString
+  street_name: MyString
+  postcode: MyString
+  cafe_description: MyText
+  opening_hours: MyText
+  contact_email: MyString
+  contact_tel: MyString
+  website_link: MyString
+  wifi_network_name: MyString
+  wifi_password: MyString
+
+two:
+  cafe_name: MyString
+  latitude: 1.5
+  longitude: 1.5
+  building_number: MyString
+  street_name: MyString
+  postcode: MyString
+  cafe_description: MyText
+  opening_hours: MyText
+  contact_email: MyString
+  contact_tel: MyString
+  website_link: MyString
+  wifi_network_name: MyString
+  wifi_password: MyString
