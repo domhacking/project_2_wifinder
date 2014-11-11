@@ -1,7 +1,8 @@
 / MAP CANVAS
 %h1 MAP
 .row
-  %input#searchbox.form-control{:placeholder => "Search", :type => "text"}
+  - if user_signed_in?
+    %input#searchbox.form-control{:placeholder => "Search", :type => "text"}
   
 
 .row
