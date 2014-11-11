@@ -32,11 +32,11 @@
                
   #container
     .row1
-      .span5
-        = yield :left
-      .span5
+      .span3
+        = render 'shared/userinfo'
+      .span6
         = yield :center
-      .span5
+      .span3
         = yield :right
       .span12
         = yield :bottom
