@@ -1,0 +1,18 @@
+%h1 
+  User Info
+  %p
+    %b Image
+    .circular
+      = link_to image_tag(@user.profile_image.thumb.url), @user.profile_image.detail.url
+  %p
+    %b User Name:
+    = @user.name
+
+  %p
+    %b Email:
+    = @user.email
+  %p
+    %b Favourites:
+
+  
+
