@@ -32,21 +32,28 @@
                
   #container
     .row1
-      .span3
-        = render 'shared/userinfo'
-        / - if user_signed_in?
-        /   = render 'shared/userinfo'
-      .span6
+      .span3#left
         - if user_signed_in?
-          = yield :center
+          = render 'shared/userinfo'
         - else
-          = render 'shared/map'
-      .span3
-        = yield :right
-      .span12
-        = yield :bottom
+          = yield :left
+      .span6#center
+        = yield :center
+        / - if user_signed_in?
+        /   = yield :center
+        / - else
+        /   = render 'shared/map'
+      .span3#right
+        - if user_signed_in?
+          = yield :right
 
-  =yield
+
+
+
+
+
+
+
 
   / .span5
   /   = render 'users/show'

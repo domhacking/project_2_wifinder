@@ -1,19 +1,16 @@
-- content_for :left do
-  - if current_user
-    %h1 
-      User Info
+- if user_signed_in?
+  %h1 
+    User Info
+    %p
+      %b Image
+      .circular
+        = link_to image_tag(current_user.profile_image.thumb.url), current_user.profile_image.detail.url
       %p
-        %b Image
-        .circular
-          = link_to image_tag(current_user.profile_image.thumb.url), current_user.profile_image.detail.url
-        %p
-          %b User Name:
-          = current_user.name
+        %b User Name:
+        = current_user.name
 
-        %p
-          %b Email:
-          = current_user.email
-        %p
-          %b Favourites:
-
-
+      %p
+        %b Email:
+        = current_user.email
+      %p
+        %b Favourites:
