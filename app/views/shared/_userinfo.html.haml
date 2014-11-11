@@ -4,7 +4,7 @@
     %p
       %b Image
       .circular
-        = link_to image_tag(current_user.profile_image.thumb.url), current_user.profile_image.detail.url
+        = image_tag(current_user.profile_image.thumb.url)
       %p
         %b User Name:
         = current_user.name

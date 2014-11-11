@@ -1,10 +1,11 @@
 class CafesController < ApplicationController
   before_filter :set_cafe, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except: [:index]
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @cafes = Cafe.all
+    # binding.pry
     respond_with(@cafes)
   end
 

@@ -63,26 +63,22 @@ $(document).ready(function(){
       map.setCenter(options.position);
     }
     
-    // this will call out method to get the db lat/long coords of our cafes
-    // markerFromDB();
+    // finding lat/long from db cafes to add to the map
+    $.getJSON("http://localhost:3000/cafes.json", function(data){
+      var items = [];
+      $.each( data, function( key, val ) {
+        addMarker(val.latitude, val.longitude)
+      });
+    })
   };
 
-  // function markerFromDB() {
-  //   var cafes = "<%=j @cafes %>"
-  //   <% cafes.each do |pin| %>
-  //   var lat = <%= pin.lat %>;
-  //   var lon = <%= pin.lon %>;
-  //   addMarker(lat, lon, gbid);
-  //   <%end%>
-  // }
-
-  // function addMarker(lat, lon) {
-  //   var marker = new google.maps.Marker({
-  //     map: map,
-  //     position: new google.maps.LatLng(lat, lon)
-  //   });
-  //   markersArray.push(marker);
-  // }
+  function addMarker(lat, lon) {
+    var marker = new google.maps.Marker({
+      map: map,
+      position: new google.maps.LatLng(lat, lon)
+    });
+    markers.push(marker);
+  }
 
   mapApp.searchBox = function(){
     var places = searchBox.getPlaces();
