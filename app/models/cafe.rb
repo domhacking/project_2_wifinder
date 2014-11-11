@@ -4,4 +4,8 @@ class Cafe < ActiveRecord::Base
 
   has_many :cafe_users
   has_many :users, through: :cafe_users
+
+  # auto-fetch coordinates from address
+  geocoded_by :postcode
+  after_validation :geocode, :if => lambda{ |obj| obj.postcode_changed? }
 end

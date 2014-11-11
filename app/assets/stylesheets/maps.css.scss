@@ -1,5 +1,14 @@
-#googleMap{
-  width: 300%;
-  min-height: 300px;
-  position: relative;
+#map-container {
+  height: 400px;
+  border-radius: 16px 16px;
+  border-color: #fff;
+  border-style: solid;
+  box-shadow: 2px 2px 10px #B1B1B1;
+  margin-top: 25px;
+  border-width: 7px;
+
+  #googleMap {
+  height: 384px;
+  width: 100%;
+ }
 }
