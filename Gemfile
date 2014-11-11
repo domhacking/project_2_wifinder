@@ -11,6 +11,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'omniauth-twitter'
 gem 'geocoder'
+gem "rails_12factor", group: :production
 gem 'carrierwave', '0.9.0'  
 gem 'rmagick'
 
