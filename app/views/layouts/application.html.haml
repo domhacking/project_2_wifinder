@@ -30,11 +30,22 @@
               %a.brand{:href => "https://blooming-journey-8960.herokuapp.com/"} WIFINDER
                   
                
-#container
-  .span5
-    = render 'user/profile'
-  .span8
-    = render 'shared/map'
-  .span5
-    = render 'user.favourites'   
+  #container
+    .row1
+      .span5
+        = yield :left
+      .span5
+        = yield :center
+      .span5
+        = yield :right
+      .span12
+        = yield :bottom
+
+
+  / .span5
+  /   = render 'users/show'
+  / .span5
+  /   = render 'shared/map'
+  / .span5
+  /   =yield   
 

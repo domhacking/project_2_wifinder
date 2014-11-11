@@ -1,18 +1,21 @@
-%h1 
+- content_for :left do
+  %h1 
   User Info
   %p
     %b Image
     .circular
-      = link_to image_tag(@user.profile_image.thumb.url), @user.profile_image.detail.url
+      / = link_to image_tag(@user.profile_image.thumb.url), @user.profile_image.detail.url
   %p
     %b User Name:
-    = @user.name
+    = current_user.name
 
   %p
     %b Email:
-    = @user.email
+    = current_user.email
   %p
     %b Favourites:
 
+- content_for :center do
+  = render 'shared/map'
   
 
