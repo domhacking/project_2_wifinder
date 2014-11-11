@@ -5,21 +5,15 @@
   %table
     %tr
       %th Cafe name
-      %th Building number
       %th Street name
       %th Postcode
-      %th Wifi network name
-      %th Wifi password
 
 
     - @cafes.each do |cafe|
       %tr
         %td= cafe.cafe_name
-        %td= cafe.building_number
         %td= cafe.street_name
         %td= cafe.postcode
-        %td= cafe.wifi_network_name
-        %td= cafe.wifi_password
         %td= link_to 'Show', cafe
         %td= link_to 'Edit', edit_cafe_path(cafe)
         %td= link_to 'Destroy', cafe, :method => :delete, :data => { :confirm => 'Are you sure?' }
