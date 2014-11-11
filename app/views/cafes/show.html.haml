@@ -40,6 +40,15 @@
   %b Wifi password:
   = @cafe.wifi_password
 
+= form_for @cafe_user, url: cafes_user_create_path do |f|
+  = f.hidden_field :cafe_id, value: @cafe.id
+  .field
+    = f.label :favourite, "Add to favourites"
+    = f.check_box :favourite
+  = f.submit "Submit Review"
+/ = render 'shared/review_cafe'
+
+
 = link_to 'Edit', edit_cafe_path(@cafe)
 \|
 = link_to 'Back', cafes_path
