@@ -1,0 +1,17 @@
+%h1 Listing cafes_user
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @cafes_user.each do |cafes_user|
+    %tr
+      %td= link_to 'Show', cafes_user
+      %td= link_to 'Edit', edit_cafes_user_path(cafes_user)
+      %td= link_to 'Destroy', cafes_user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Cafe user', new_cafes_user_path

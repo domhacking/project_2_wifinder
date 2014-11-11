@@ -1,0 +1,6 @@
+= form_for @cafe_user do |f|
+  = hidden_tag "cafe_id", @cafe.id
+    .field
+      = f.label :favourite, "Add to favourites"
+      = f.check_box :favourite
+  = f.submit "Submit Review"

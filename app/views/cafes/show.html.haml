@@ -1,45 +1,43 @@
-%p#notice= notice
+- content_for :center do
+  %p#notice= notice
 
-%p
-  %b Cafe name:
-  = @cafe.cafe_name
-%p
-  %b Latitude:
-  = @cafe.latitude
-%p
-  %b Longitude:
-  = @cafe.longitude
-%p
-  %b Building number:
-  = @cafe.building_number
-%p
-  %b Street name:
-  = @cafe.street_name
-%p
-  %b Postcode:
-  = @cafe.postcode
-%p
-  %b Cafe description:
-  = @cafe.cafe_description
-%p
-  %b Opening hours:
-  = @cafe.opening_hours
-%p
-  %b Contact email:
-  = @cafe.contact_email
-%p
-  %b Contact tel:
-  = @cafe.contact_tel
-%p
-  %b Website link:
-  = @cafe.website_link
-%p
-  %b Wifi network name:
-  = @cafe.wifi_network_name
-%p
-  %b Wifi password:
-  = @cafe.wifi_password
+  %h3
+    %b= @cafe.cafe_name
+  %p
+    %b= @cafe.building_number + ' ' + @cafe.street_name + ', ' + @cafe.postcode
+  %br
+  %p
+    %b= @cafe.cafe_description
+  %br
+  %p
+    %b Opening hours:
+    = @cafe.opening_hours
+  %p
+    %b Email:
+    = @cafe.contact_email
+  %p
+    %b Tel:
+    = @cafe.contact_tel
+  %p
+    %b Website:
+    = @cafe.website_link
+  %p
+  %br
+    %b Wifi network name:
+    = @cafe.wifi_network_name
+  %p
+    %b Wifi password:
+    = @cafe.wifi_password
 
-= link_to 'Edit', edit_cafe_path(@cafe)
-\|
-= link_to 'Back', cafes_path
+  = form_for @cafe_user, url: cafes_user_create_path do |f|
+    = f.hidden_field :cafe_id, value: @cafe.id
+    .field
+      = f.label :favourite, "Add to favourites"
+      = f.check_box :favourite
+    = f.submit "Submit Review"
+  / = render 'shared/review_cafe'
+
+
+  = link_to 'Edit', edit_cafe_path(@cafe)
+  \|
+  = link_to 'Back', cafes_path
