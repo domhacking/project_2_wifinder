@@ -1,17 +1,17 @@
 %h1 
-  - if current_user
-    User Info
-    %p
-      %b Image
-      .circular
-        = link_to image_tag(current_user.profile_image), current_user.profile_image
-      %p
-        %b User Name:
-        = current_user.name
+  / - if current_user
+  /   User Info
+  /   %p
+  /     %b Image
+  /     .circular
+  /       = link_to image_tag(current_user.profile_image.thumb.url), current_user.profile_image.detail.url
+  /     %p
+  /       %b User Name:
+  /       = current_user.name
 
-      %p
-        %b Email:
-        = current_user.email
+  /     %p
+  /       %b Email:
+  /       = current_user.email
   
     .btn
       = link_to 'FIND ME A CAFE', cafes_path
