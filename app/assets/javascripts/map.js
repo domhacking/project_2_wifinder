@@ -2,28 +2,70 @@
 
 $(document).ready(function(){
   var map;
+  var mapOptions;
+  var canvas;
+  var userLocationMarker = new google.maps.Marker();
 
   //initialize map variables
   var markers = [];
-  var mapApp = {}
-  var input = document.getElementById('searchbox')
+  var mapApp = {};
+  var input = $("#searchbox")[0];
 
   //SearchBox variable:
-  var searchBox = new google.maps.places.SearchBox(document.getElementById('searchbox'));
+  var searchBox = new google.maps.places.SearchBox(input);
 
   //Initialising map once the page has loaded
   mapApp.initializeMap = function(){
-    var mapOptions = {
-      zoom: 15,
-      center: new google.maps.LatLng(51.520975, -0.104750)
+    mapOptions = {
+      zoom: 16,
+      // center: new google.maps.LatLng(51.520975, -0.104750),
+      mapTypeId:google.maps.MapTypeId.ROADMAP
     };
 
-    map = new google.maps.Map(document.getElementById('googleMap'),
+    canvas = $("#googleMap")[0];
+    map = new google.maps.Map(canvas,
       mapOptions);
-  };
 
-  mapApp.searchBox = function(){
-    var places = searchBox.getPlaces();
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = new google.maps.LatLng(position.coords.latitude,
+         position.coords.longitude);
+
+        var infowindow = new google.maps.InfoWindow({
+          map: map,
+          position: pos,
+          content: 'You are here...'
+        });
+
+        map.setCenter(pos);
+      }, function() {
+        handleNoGeolocation(true);
+      });
+    } else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
+  }
+  function handleNoGeolocation(errorFlag) {
+    if (errorFlag) {
+      var content = 'Error: The Geolocation service failed.';
+    } else {
+      var content = 'Error: Your browser doesn\'t support geolocation.';
+    }
+
+    var options = {
+      map: map,
+      position: new google.maps.LatLng(51.508742, -0.120850),
+      content: content
+    };
+
+    var infowindow = new google.maps.InfoWindow(options);
+    map.setCenter(options.position);
+  }
+
+};
+
+mapApp.searchBox = function(){
+  var places = searchBox.getPlaces();
 
     //Deleting previous markers
     for (var i = 0, marker; marker = markers[i]; i++) {
@@ -61,7 +103,7 @@ $(document).ready(function(){
     // FIT THE BOUNDS OF THE MAP AROUND THIS OBjECT
     map.fitBounds(bounds); 
     // SETTING HOW ZOOMED THE RESULTS ARE
-    map.setZoom(15);
+    map.setZoom(16);
   }
 
   google.maps.event.addListener(searchBox, 'places_changed', function(){
