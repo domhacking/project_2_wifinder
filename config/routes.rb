@@ -10,6 +10,8 @@ WifinderApp::Application.routes.draw do
   end
 
   resources :cafes
+  # resources :cafes_user
+  post "/cafes_user/create"
 
   root :to => 'cafes#index' 
 
