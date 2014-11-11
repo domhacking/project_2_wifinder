@@ -33,8 +33,9 @@
   #container
     .row1
       .span3
-        - if user_signed_in?
-          = render 'shared/userinfo'
+        = render 'shared/userinfo'
+        / - if user_signed_in?
+        /   = render 'shared/userinfo'
       .span6
         - if user_signed_in?
           = yield :center

@@ -1,6 +1,7 @@
 - content_for :center do
+  = render 'shared/map'
+- content_for :right do
   %h1 Listing cafes
-
   %table
     %tr
       %th Cafe name
@@ -26,3 +27,10 @@
   %br
 
   = link_to 'New Cafe', new_cafe_path
+
+
+
+
+
+
+  
