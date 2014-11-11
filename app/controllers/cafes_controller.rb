@@ -21,8 +21,10 @@ class CafesController < ApplicationController
   end
 
   def create
-    @cafe = Cafe.new(params[:cafe])
+    
+    @cafe = current_user.cafes.new(params[:cafe])
     @cafe.save
+    current_user.cafe_users.create(cafe_id: @cafe.id)
     respond_with(@cafe)
   end
 
