@@ -8,4 +8,8 @@ class Cafe < ActiveRecord::Base
   # auto-fetch coordinates from address
   geocoded_by :postcode
   after_validation :geocode, :if => lambda{ |obj| obj.postcode_changed? }
+
+  def full_address
+    
+  end
 end

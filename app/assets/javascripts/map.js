@@ -26,6 +26,7 @@ $(document).ready(function(){
     map = new google.maps.Map(canvas,
       mapOptions);
 
+    // this will center the map on the user's location if they have geolocation enabled
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = new google.maps.LatLng(position.coords.latitude,
@@ -42,30 +43,49 @@ $(document).ready(function(){
         handleNoGeolocation(true);
       });
     } else {
-    // Browser doesn't support Geolocation
-    handleNoGeolocation(false);
-  }
-  function handleNoGeolocation(errorFlag) {
-    if (errorFlag) {
-      var content = 'Error: The Geolocation service failed.';
-    } else {
-      var content = 'Error: Your browser doesn\'t support geolocation.';
+      // Browser doesn't support Geolocation
+      handleNoGeolocation(false);
     }
+    function handleNoGeolocation(errorFlag) {
+      if (errorFlag) {
+        var content = 'Error: The Geolocation service failed.';
+      } else {
+        var content = 'Error: Your browser doesn\'t support geolocation.';
+      }
 
-    var options = {
-      map: map,
-      position: new google.maps.LatLng(51.508742, -0.120850),
-      content: content
-    };
+      var options = {
+        map: map,
+        position: new google.maps.LatLng(51.508742, -0.120850),
+        content: content
+      };
 
-    var infowindow = new google.maps.InfoWindow(options);
-    map.setCenter(options.position);
-  }
+      var infowindow = new google.maps.InfoWindow(options);
+      map.setCenter(options.position);
+    }
+    
+    // this will call out method to get the db lat/long coords of our cafes
+    // markerFromDB();
+  };
 
-};
+  // function markerFromDB() {
+  //   var cafes = "<%=j @cafes %>"
+  //   <% cafes.each do |pin| %>
+  //   var lat = <%= pin.lat %>;
+  //   var lon = <%= pin.lon %>;
+  //   addMarker(lat, lon, gbid);
+  //   <%end%>
+  // }
 
-mapApp.searchBox = function(){
-  var places = searchBox.getPlaces();
+  // function addMarker(lat, lon) {
+  //   var marker = new google.maps.Marker({
+  //     map: map,
+  //     position: new google.maps.LatLng(lat, lon)
+  //   });
+  //   markersArray.push(marker);
+  // }
+
+  mapApp.searchBox = function(){
+    var places = searchBox.getPlaces();
 
     //Deleting previous markers
     for (var i = 0, marker; marker = markers[i]; i++) {
