@@ -11,13 +11,9 @@ gem 'devise'
 gem 'haml-rails'
 gem 'omniauth-twitter'
 gem 'geocoder'
-<<<<<<< HEAD
-gem 'carrierwave'
 gem "rails_12factor", group: :production
-=======
 gem 'carrierwave', '0.9.0'  
 gem 'rmagick'
->>>>>>> development
 
 
 
