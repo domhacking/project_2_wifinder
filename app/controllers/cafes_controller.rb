@@ -1,11 +1,22 @@
 class CafesController < ApplicationController
   before_filter :set_cafe, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except: [:index]
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @cafes = Cafe.all
-    respond_with(@cafes)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.js do
+        ne = params[:ne].split(',').collect{|e|e.to_f}  
+        sw = params[:sw].split(',').collect{|e|e.to_f}
+        
+        # @cafes = Cafe.all
+        @cafes = Cafe.withinBounds(sw, ne)
+        # binding.pry
+        render json: @cafes
+      end
+    end
   end
 
   def show
