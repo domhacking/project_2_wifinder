@@ -5,8 +5,18 @@ class CafesController < ApplicationController
 
   def index
     @cafes = Cafe.all
-    # binding.pry
-    respond_with(@cafes)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.js do
+        ne = params[:ne].split(',').collect{|e|e.to_f}  
+        sw = params[:sw].split(',').collect{|e|e.to_f}
+        
+        # @cafes = Cafe.all
+        @cafes = Cafe.withinBounds(sw, ne)
+        # binding.pry
+        render json: @cafes
+      end
+    end
   end
 
   def show
