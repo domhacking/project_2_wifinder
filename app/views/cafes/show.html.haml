@@ -1,33 +1,36 @@
 - content_for :center do
   %p#notice= notice
 
-  %h3
-    %b= @cafe.cafe_name
-  %p
-    %b= @cafe.building_number + ' ' + @cafe.street_name + ', ' + @cafe.postcode
-  %br
-  %p
-    %b= @cafe.cafe_description
-  %br
-  %p
-    %b Opening hours:
-    = @cafe.opening_hours
-  %p
-    %b Email:
-    = @cafe.contact_email
-  %p
-    %b Tel:
-    = @cafe.contact_tel
-  %p
-    %b Website:
-    = @cafe.website_link
-  %p
-  %br
-    %b Wifi network name:
-    = @cafe.wifi_network_name
-  %p
-    %b Wifi password:
-    = @cafe.wifi_password
+
+  #cafe_header
+    %h1
+      %b= @cafe.cafe_name
+    %p
+      %b= @cafe.building_number + ' ' + @cafe.street_name + ', ' + @cafe.postcode
+    %p
+      %b= @cafe.opening_hours
+  %h3 ***IMAGE TO GO HERE**
+  #cafe_blurb
+    %p
+      %b= @cafe.cafe_description
+
+  #cafe_contact_details
+    %p
+      %b Email:
+      = @cafe.contact_email
+    %p
+      %b Tel:
+      = @cafe.contact_tel
+    %p
+      %b Website:
+      = @cafe.website_link
+  #wifi_details
+    %p
+      %b Wifi network name:
+      = @cafe.wifi_network_name
+    %p
+      %b Wifi password:
+      = @cafe.wifi_password
 
   = form_for @cafe_user, url: cafes_user_create_path do |f|
     = f.hidden_field :cafe_id, value: @cafe.id
@@ -41,5 +44,9 @@
   = link_to 'Edit', edit_cafe_path(@cafe)
   \|
   = link_to 'Back', cafes_path
+
+
+- content_for :right do
+  = render 'shared/map'
 
 
