@@ -70,9 +70,11 @@ $(document).ready(function(){
       dataType: "JSON",
     }).success(function(data){
       var items = [];
+      var listArea = $(".extras ul")
+      listArea.empty()
       $.each( data, function( key, val ) {
         addMarker(val.latitude, val.longitude)
-        addListItem(val.cafe_name)
+        addListItem(listArea, val)
       });
     })
   }
@@ -85,8 +87,9 @@ $(document).ready(function(){
     markers.push(marker);
   }
 
-  function addListItem(cafe_name){
-
+  function addListItem(listArea, cafe){
+    var listItem = "<li><a class='cafe' href='/cafes/" + cafe.id + "''>" + cafe.cafe_name + "</a></li>"
+    listArea.append(listItem);
   }
 
   mapApp.searchMap = function(){

@@ -5,19 +5,8 @@
 - content_for :center do
   = render 'shared/map'
 - content_for :right do
-  %h1 Listing cafes
-  %table
-    %tr
-      %th Cafe name
-      %th Postcode
-
-
-    - @cafes.each do |cafe|
-      %tr
-        %td= cafe.cafe_name
-        %td= cafe.postcode
-        %td= link_to 'Show', cafe
-        %td= link_to 'Destroy', cafe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %h4 Search Results:
+  %ul
 
   %br
 
