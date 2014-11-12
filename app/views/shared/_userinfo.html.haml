@@ -1,10 +1,13 @@
 - if user_signed_in?
   %h1 
-    User Info
+    My Profile
     %p
-      %b Image
       .circular
-        = image_tag(current_user.profile_image.thumb.url)
+        -if current_user.profile_image.thumb.url.present?
+          = image_tag(current_user.profile_image.thumb.url)
+        -else 
+          = image_tag("default.png")
+          
       %p
         %b User Name:
         = current_user.name
@@ -12,5 +15,15 @@
       %p
         %b Email:
         = current_user.email
-      %p
-        %b Favourites:
+
+    %input#searchbox.form-control{:placeholder => "Search", :type => "text"}
+  
+    .btn
+      = link_to 'FIND ME A CAFE', cafes_path
+    .btn  
+      = link_to 'EDIT MY PROFILE', edit_user_registration_path
+      / = link_to 'MY FAVOURITES', _path
+         
+
+
+

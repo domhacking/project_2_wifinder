@@ -1,11 +1,11 @@
 - content_for :left do
   %h1 
-    User Info
     - if current_user
+      User Info
       %p
         %b Image
         .circular
-          = link_to image_tag(current_user.profile_image.thumb.url), current_user.profile_image.detail.url
+          = image_tag(current_user.profile_image.thumb.url)
         %p
           %b User Name:
           = current_user.name
@@ -15,6 +15,10 @@
           = current_user.email
         %p
           %b Favourites:
+
+- content_for :center do
+    = render 'shared/map'
+
           
           
           
