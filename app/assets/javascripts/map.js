@@ -62,7 +62,6 @@ $(document).ready(function(){
   };
 
   function getLocations(southWest, northEast){
-    // debugger;
     // finding lat/long from db cafes to add to the map
     $.ajax({
       type: "GET",
@@ -90,42 +89,49 @@ $(document).ready(function(){
 
   }
 
-  mapApp.updateMap = function(){
+  mapApp.searchMap = function(){
     var places = searchBox.getPlaces();
-
-    // //Deleting previous markers
-    // for (var i = 0, marker; marker = markers[i]; i++) {
-    //   marker.setMap(null);
-    // }
-
-    // // and creating an empty array for new search results
-    // markers = [];
 
     // CREATING A NEW LATITUDE + LONGITUDE BOUND OBJECT
     var bounds = new google.maps.LatLngBounds();
     
     // LOOPING THROUGH ARRAY
     for (var i = 0, place; place = places[i]; i++) {
-
       //mapping the bounds of the map around the location; 
-      // markers.push(marker);
       bounds.extend(place.geometry.location);
     }
     // FIT THE BOUNDS OF THE MAP AROUND THIS OBjECT
     map.fitBounds(bounds);
     // SETTING HOW ZOOMED THE RESULTS ARE
     map.setZoom(15);
+    mapApp.updateMap();
+  }
+
+  mapApp.updateMap = function(){
+    mapApp.deleteMarkers();
     var bounds = map.getBounds();
     var southWest = bounds.getSouthWest();
     var northEast = bounds.getNorthEast();
-    
+
     getLocations(southWest, northEast);
-    // debugger;
   }
 
-  google.maps.event.addListener(searchBox, 'places_changed', function(){
+  mapApp.deleteMarkers = function(){
+    for (var i = 0, marker; marker = markers[i]; i++) {
+      marker.setMap(null);
+    }
+  }
+
+  mapApp.initializeMap();
+  // google.maps.event.addListener(map, 'dragend', function(){
+  //   mapApp.updateMap();
+  // })
+  google.maps.event.addListener(map, 'bounds_changed', function(){
     mapApp.updateMap();
   })
+  google.maps.event.addListener(searchBox, 'places_changed', function(){
+    mapApp.searchMap();
+  })
   
-  mapApp.initializeMap();
+  
 })
