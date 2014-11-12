@@ -1,10 +1,9 @@
-/ MAP CANVAS
-%h1 MAP
+/SEARCHBOX
 .row
   - if user_signed_in?
     %input#searchbox.form-control{:placeholder => "Search", :type => "text"}
   
-
+/ MAP CANVAS
 .row
   #map-container.col-md-8
     #googleMap
