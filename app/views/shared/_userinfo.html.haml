@@ -2,9 +2,12 @@
   %h1 
     User Info
     %p
-      %b Image
       .circular
-        = image_tag(current_user.profile_image.thumb.url)
+        -if current_user.profile_image.thumb.url.present?
+          = image_tag(current_user.profile_image.thumb.url)
+        -else 
+          = image_tag("default.png")
+          
       %p
         %b User Name:
         = current_user.name
