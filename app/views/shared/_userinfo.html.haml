@@ -1,8 +1,7 @@
 - if user_signed_in?
   %h1 
-    User Info
+    My Profile
     %p
-      %b Image
       .circular
         = link_to image_tag(current_user.profile_image.thumb.url), current_user.profile_image.detail.url
       %p
@@ -12,6 +11,8 @@
       %p
         %b Email:
         = current_user.email
+
+    %input#searchbox.form-control{:placeholder => "Search", :type => "text"}
   
     .btn
       = link_to 'FIND ME A CAFE', cafes_path
