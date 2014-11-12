@@ -123,12 +123,12 @@ $(document).ready(function(){
   }
 
   mapApp.initializeMap();
-  // google.maps.event.addListener(map, 'dragend', function(){
-  //   mapApp.updateMap();
-  // })
-  google.maps.event.addListener(map, 'bounds_changed', function(){
+  google.maps.event.addListener(map, 'dragend', function(){
     mapApp.updateMap();
   })
+  // google.maps.event.addListener(map, 'bounds_changed', function(){
+  //   mapApp.updateMap();
+  // })
   google.maps.event.addListener(searchBox, 'places_changed', function(){
     mapApp.searchMap();
   })
