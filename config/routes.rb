@@ -3,11 +3,11 @@ WifinderApp::Application.routes.draw do
 
   
 
-  devise_scope :user do
-    #get 'users' => 'users#index'
-    resources :users,  only: [:index]
-    resources :users, :only => [:show]
-  end
+  # devise_scope :user do
+  #   #get 'users' => 'users#index'
+  #   resources :users,  only: [:index]
+  #   resources :users, :only => [:show]
+  # end
 
   resources :cafes
   # resources :cafes_user
@@ -15,6 +15,6 @@ WifinderApp::Application.routes.draw do
 
   root :to => 'cafes#index' 
 
-  get 'users/:id' => 'users#show' 
+  get '/users/:id' => 'users#show' 
 
 end
