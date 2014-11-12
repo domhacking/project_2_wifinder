@@ -15,5 +15,8 @@ class Cafe < ActiveRecord::Base
   end
   #####
 
+  def self.withinBounds(sw, ne)
+    Cafe.where(latitude: sw[0]..ne[0], longitude: sw[1]..ne[1]).limit(5)
+  end
 
 end
