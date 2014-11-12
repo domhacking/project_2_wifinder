@@ -1,24 +1,21 @@
 // WAITS FOR ALL HTML and DOM TO HAVE LOADED
 
 $(document).ready(function(){
-  var map;
-  var mapOptions;
-  var canvas;
-  var userLocationMarker = new google.maps.Marker();
-
   //initialize map variables
+  var map;
+  var canvas;
+  var mapOptions;
   var markers = [];
   var mapApp = {};
-  var input = $("#searchbox")[0];
 
   //SearchBox variable:
+  var input = $("#searchbox")[0];
   var searchBox = new google.maps.places.SearchBox(input);
 
   //Initialising map once the page has loaded
   mapApp.initializeMap = function(){
     mapOptions = {
-      zoom: 16,
-      // center: new google.maps.LatLng(51.520975, -0.104750),
+      zoom: 15,
       mapTypeId:google.maps.MapTypeId.ROADMAP
     };
 
@@ -62,73 +59,82 @@ $(document).ready(function(){
       var infowindow = new google.maps.InfoWindow(options);
       map.setCenter(options.position);
     }
-    
-    // this will call out method to get the db lat/long coords of our cafes
-    // markerFromDB();
   };
 
-  // function markerFromDB() {
-  //   var cafes = "<%=j @cafes %>"
-  //   <% cafes.each do |pin| %>
-  //   var lat = <%= pin.lat %>;
-  //   var lon = <%= pin.lon %>;
-  //   addMarker(lat, lon, gbid);
-  //   <%end%>
-  // }
+  function getLocations(southWest, northEast){
+    // finding lat/long from db cafes to add to the map
+    $.ajax({
+      type: "GET",
+      url: "/cafes.js",
+      data: {sw: southWest.toUrlValue(), ne:  northEast.toUrlValue()},
+      dataType: "JSON",
+    }).success(function(data){
+      var items = [];
+      var listArea = $(".extras ul")
+      listArea.empty()
+      $.each( data, function( key, val ) {
+        addMarker(val.latitude, val.longitude)
+        addListItem(listArea, val)
+      });
+    })
+  }
 
-  // function addMarker(lat, lon) {
-  //   var marker = new google.maps.Marker({
-  //     map: map,
-  //     position: new google.maps.LatLng(lat, lon)
-  //   });
-  //   markersArray.push(marker);
-  // }
+  function addMarker(lat, lon) {
+    var marker = new google.maps.Marker({
+      map: map,
+      position: new google.maps.LatLng(lat, lon)
+    });
+    markers.push(marker);
+  }
 
-  mapApp.searchBox = function(){
+  function addListItem(listArea, cafe){
+    var listItem = "<li><a class='cafe' href='/cafes/" + cafe.id + "''>" + cafe.cafe_name + "</a></li>"
+    listArea.append(listItem);
+  }
+
+  mapApp.searchMap = function(){
     var places = searchBox.getPlaces();
-
-    //Deleting previous markers
-    for (var i = 0, marker; marker = markers[i]; i++) {
-      marker.setMap(null);
-    }
-
-    // and creating an empty array for new search results
-    markers = [];
 
     // CREATING A NEW LATITUDE + LONGITUDE BOUND OBJECT
     var bounds = new google.maps.LatLngBounds();
     
     // LOOPING THROUGH ARRAY
     for (var i = 0, place; place = places[i]; i++) {
-      var image = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
-
-      // Create a marker for each place.
-      // can change this marker in Rails - put image in assets folder
-      var marker = new google.maps.Marker({
-        map: map,
-        icon: image,
-        title: place.name,
-        position: place.geometry.location
-      });
       //mapping the bounds of the map around the location; 
-      markers.push(marker);
-      bounds.extend(place.geometry.location);   
+      bounds.extend(place.geometry.location);
     }
     // FIT THE BOUNDS OF THE MAP AROUND THIS OBjECT
-    map.fitBounds(bounds); 
+    map.fitBounds(bounds);
     // SETTING HOW ZOOMED THE RESULTS ARE
-    map.setZoom(16);
+    map.setZoom(15);
+    mapApp.updateMap();
   }
 
+  mapApp.updateMap = function(){
+    mapApp.deleteMarkers();
+    var bounds = map.getBounds();
+    var southWest = bounds.getSouthWest();
+    var northEast = bounds.getNorthEast();
+
+    getLocations(southWest, northEast);
+  }
+
+  mapApp.deleteMarkers = function(){
+    for (var i = 0, marker; marker = markers[i]; i++) {
+      marker.setMap(null);
+    }
+  }
+
+  mapApp.initializeMap();
+  google.maps.event.addListener(map, 'dragend', function(){
+    mapApp.updateMap();
+  })
+  // google.maps.event.addListener(map, 'bounds_changed', function(){
+  //   mapApp.updateMap();
+  // })
   google.maps.event.addListener(searchBox, 'places_changed', function(){
-    mapApp.searchBox();
+    mapApp.searchMap();
   })
   
-  mapApp.initializeMap();
+  
 })

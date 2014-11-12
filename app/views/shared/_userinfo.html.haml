@@ -3,7 +3,11 @@
     My Profile
     %p
       .circular
-        = link_to image_tag(current_user.profile_image.thumb.url), current_user.profile_image.detail.url
+        -if current_user.profile_image.thumb.url.present?
+          = image_tag(current_user.profile_image.thumb.url)
+        -else 
+          = image_tag("default.png")
+          
       %p
         %b User Name:
         = current_user.name
