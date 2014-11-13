@@ -8,6 +8,7 @@ class Ability
     elsif user.role? :thundercat
         can :update, Cafe do |cafe|
             cafe.user_id == user.id
+        end
     else
         can :read, Cafe
     end
