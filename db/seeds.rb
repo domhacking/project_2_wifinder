@@ -10,25 +10,7 @@
 User.delete_all
 Cafe.delete_all
 
-cafe1 = Cafe.create!(cafe_name: "Dave's Cafe", building_number: "2", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "dc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "SW3 4DA", street_name: "Redburn Street", website_link: "www.26grains.com", wifi_network_name: "davescafe", wifi_password:"123456")
 
-cafe2 = Cafe.create!(cafe_name: "Beth's Cafe", building_number: "44", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "bc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "W8 5RQ", street_name: "Victoria Road", website_link: "www.26grains.com", wifi_network_name: "bethscafe", wifi_password:"123456")
-
-cafe3 = Cafe.create!(cafe_name: "Lulu's Cafe", building_number: "9", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "lc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "EC1R 5EN", street_name: "Backhill", website_link: "www.26grains.com", wifi_network_name: "luluscafe", wifi_password:"123456")
-
-cafe4 = Cafe.create!(cafe_name: "Kaffeine", building_number: "2", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "dc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "SW3 4DA", street_name: "Great Titchfield St", website_link: "www.kaffeine.co.uk", wifi_network_name: "kaffeinecafe", wifi_password:"123456")
-
-cafe5 = Cafe.create!(cafe_name: "Ozone", building_number: "11", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "oz@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "EC2A 4AQ", street_name: "Leonard St", website_link: "www.26grain.com", wifi_network_name: "ozone", wifi_password:"123456")
-
-cafe6 = Cafe.create!(cafe_name: "Department of Coffee and Social Affairs", building_number: "14", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "dc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "EC1N 7SU", street_name: "Leather Lane", website_link: "www.26grain.com", wifi_network_name: "docasa", wifi_password:"123456")
-
-cafe7 = Cafe.create!(cafe_name: "Monmouth", building_number: "2", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "mc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "SE1 9AB", street_name: "Park Street", website_link: "www.26grain.com", wifi_network_name: "monmouthcafe", wifi_password:"123456")
-
-cafe8 = Cafe.create!(cafe_name: "Workshop Coffee", building_number: "27", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "wc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "EC1M 5RN", street_name: "Clerkenwell Road", website_link: "www.26grain.com", wifi_network_name: "workshopcoffee", wifi_password:"123456")
-
-cafe9 = Cafe.create!(cafe_name: "Flat White", building_number: "17", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "fw@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "W1F 0PT", street_name: "Berwick Street", website_link: "www.26grain.com", wifi_network_name: "flatwhite", wifi_password:"123456")
-
-cafe10 = Cafe.create!(cafe_name: "Blacksheep Coffee", building_number: "159", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "bc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "NW1 7JY", street_name: "Camden High St", website_link: "www.26grain.com", wifi_network_name: "blacksheep", wifi_password:"123456")
 
 
 user1 = User.create!(name: "Olivia Gibbs", email: "og@gmail.com", password: "password1")
@@ -58,3 +40,24 @@ user24 = User.create!(name: "Jacob Cummings", email: "jc@gmail.com", password: "
 user25 = User.create!(name: "Simon Orange", email: "sor@gmail.com", password: "password1")
 user26 = User.create!(name: "Erik Jan", email: "ej@gmail.com", password: "password1")
 user27 = User.create!(name: "Dominc Hacking", email: "dominichacking@gmail.com", password: "password1")
+
+
+cafe1 = Cafe.create!(user_name: user1.id, cafe_name: "Dave's Cafe", building_number: "2", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "dc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "SW3 4DA", street_name: "Redburn Street", website_link: "www.26grains.com", wifi_network_name: "davescafe", wifi_password:"123456")
+
+cafe2 = Cafe.create!(user_name: user1.id,cafe_name: "Beth's Cafe", building_number: "44", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "bc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "W8 5RQ", street_name: "Victoria Road", website_link: "www.26grains.com", wifi_network_name: "bethscafe", wifi_password:"123456")
+
+cafe3 = Cafe.create!(user_name: user1.id,cafe_name: "Lulu's Cafe", building_number: "9", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "lc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "EC1R 5EN", street_name: "Backhill", website_link: "www.26grains.com", wifi_network_name: "luluscafe", wifi_password:"123456")
+
+cafe4 = Cafe.create!(user_name: user1.id,cafe_name: "Kaffeine", building_number: "2", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "dc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "SW3 4DA", street_name: "Great Titchfield St", website_link: "www.kaffeine.co.uk", wifi_network_name: "kaffeinecafe", wifi_password:"123456")
+
+cafe5 = Cafe.create!(user_name: user1.id,cafe_name: "Ozone", building_number: "11", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "oz@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "EC2A 4AQ", street_name: "Leonard St", website_link: "www.26grain.com", wifi_network_name: "ozone", wifi_password:"123456")
+
+cafe6 = Cafe.create!(user_name: user1.id,cafe_name: "Department of Coffee and Social Affairs", building_number: "14", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "dc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "EC1N 7SU", street_name: "Leather Lane", website_link: "www.26grain.com", wifi_network_name: "docasa", wifi_password:"123456")
+
+cafe7 = Cafe.create!(user_name: user1.id,cafe_name: "Monmouth", building_number: "2", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "mc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "SE1 9AB", street_name: "Park Street", website_link: "www.26grain.com", wifi_network_name: "monmouthcafe", wifi_password:"123456")
+
+cafe8 = Cafe.create!(user_name: user1.id,cafe_name: "Workshop Coffee", building_number: "27", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "wc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "EC1M 5RN", street_name: "Clerkenwell Road", website_link: "www.26grain.com", wifi_network_name: "workshopcoffee", wifi_password:"123456")
+
+cafe9 = Cafe.create!(user_name: user1.id,cafe_name: "Flat White", building_number: "17", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "fw@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "W1F 0PT", street_name: "Berwick Street", website_link: "www.26grain.com", wifi_network_name: "flatwhite", wifi_password:"123456")
+
+cafe10 = Cafe.create!(user_name: user1.id,cafe_name: "Blacksheep Coffee", building_number: "159", cafe_description: "Lovely Coffee and GREAT wifi", contact_email: "bc@gmail.com", contact_tel: "02079373415", opening_hours: "Mon-Sun 07:30 - 18:30", postcode: "NW1 7JY", street_name: "Camden High St", website_link: "www.26grain.com", wifi_network_name: "blacksheep", wifi_password:"123456")
