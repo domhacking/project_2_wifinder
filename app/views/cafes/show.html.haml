@@ -10,12 +10,10 @@
     %p
       %b= @cafe.opening_hours
   %h3 
-    -if cafe_image.thumb.url.present?
-      %b = image_tag @cafe.cafe_image.url
+    -if @cafe.cafe_image.thumb.url.present?
+      %b= image_tag @cafe.cafe_image.url
     -else 
-      = image_tag("default_cafe.png")
-
-
+      = image_tag.thumb.url("default_cafe.png")
 
   #cafe_blurb
     %p
