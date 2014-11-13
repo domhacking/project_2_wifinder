@@ -1,6 +1,7 @@
 class CreateCafes < ActiveRecord::Migration
   def change
     create_table :cafes do |t|
+      t.integer :user_id
       t.string :cafe_name
       t.float :latitude
       t.float :longitude
