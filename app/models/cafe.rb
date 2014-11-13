@@ -3,9 +3,9 @@ class Cafe < ActiveRecord::Base
 
   mount_uploader :cafe_image, CafeImageUploader
 
-  has_many :cafe_users
-  has_many :users, through: :cafe_users
-  accepts_nested_attributes_for :cafe_users
+  belongs_to :user
+  has_many :favorite_cafes
+  # has_many :favorited_by, through: :favorite_cafes, source: :user
 
   ##### GEOCODING
   # auto-fetch coordinates from address
@@ -19,6 +19,17 @@ class Cafe < ActiveRecord::Base
 
   def self.withinBounds(sw, ne)
     Cafe.where(latitude: sw[0]..ne[0], longitude: sw[1]..ne[1]).limit(5)
+  end
+
+  def self.findFaves(current_user)
+    current_user.favorite_cafes.map do |fave|
+      Cafe.find(fave.cafe_id)
+    end
+  end
+
+  def is_favorite?(cafe, user)
+    binding.pry
+    puts cafe
   end
 
 end

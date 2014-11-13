@@ -9,6 +9,7 @@
       %b= @cafe.building_number + ' ' + @cafe.street_name + ', ' + @cafe.postcode
     %p
       %b= @cafe.opening_hours
+
   %h3
     .cafeimages 
       -if @cafe.cafe_image.thumb.url.present?
@@ -38,18 +39,16 @@
       %b Wifi password:
       = @cafe.wifi_password
 
-  = form_for @cafe_user, url: cafes_user_create_path do |f|
-    = f.hidden_field :cafe_id, value: @cafe.id
-    .field
-      = f.label :favourite, "Add to favourites"
-      = f.check_box :favourite
-    = f.submit "Submit Review"
-  / = render 'shared/review_cafe'
-
-
-  = link_to 'Edit', edit_cafe_path(@cafe)
-  \|
-  = link_to 'Back', cafes_path
+  #favorite
+    - if current_user
+      # - if is_favorite?(@cafe, current_user)
+        = link_to "Add to favorites",   favorite_cafe_path(@cafe, type: "favorite"), method: :put
+      - else
+        = link_to "Remove from favorites", favorite_cafe_path(@cafe, type: "unfavorite"), method: :put
+  #links
+    = link_to 'Edit', edit_cafe_path(@cafe)
+    \|
+    = link_to 'Back', cafes_path
 
 
 - content_for :right do

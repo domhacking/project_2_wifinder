@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20141113112244) do
 
   create_table "cafes", :force => true do |t|
+    t.integer  "user_id"
     t.string   "cafe_name"
     t.float    "latitude"
     t.float    "longitude"
@@ -32,16 +33,11 @@ ActiveRecord::Schema.define(:version => 20141113112244) do
     t.string   "cafe_image"
   end
 
-  create_table "cafes_user", :force => true do |t|
+  create_table "favorite_cafes", :force => true do |t|
     t.integer  "cafe_id"
     t.integer  "user_id"
-    t.integer  "rating"
-    t.text     "review"
-    t.boolean  "favourite"
-    t.boolean  "cafe_admin"
-    t.boolean  "approved_wifi_user"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
