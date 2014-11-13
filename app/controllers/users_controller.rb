@@ -8,7 +8,7 @@ class UsersController < Devise::RegistrationsController
     super
 
     # then add our custom logic
-    @user.role = "user"
+    @user.role = "thundercat"
     @user.save!
 
     UserMailer.registration_confirmation(@user).deliver

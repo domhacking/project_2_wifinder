@@ -45,9 +45,12 @@
         = link_to "Remove from favorites", favorite_cafe_path(@cafe, type: "unfavorite"), method: :put
       - else
         = link_to "Add to favorites",   favorite_cafe_path(@cafe, type: "favorite"), method: :put
+  
+ 
   #links
-    = link_to 'Edit', edit_cafe_path(@cafe)
-    \|
+    - if current_user.id == @cafe.user_id 
+      = link_to 'Edit', edit_cafe_path(@cafe)
+      \|
     = link_to 'Back', cafes_path
 
 
