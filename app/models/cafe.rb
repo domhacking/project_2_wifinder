@@ -5,6 +5,7 @@ class Cafe < ActiveRecord::Base
 
   belongs_to :user
   has_many :favorite_cafes
+  has_many :cafe_image
   # has_many :favorited_by, through: :favorite_cafes, source: :user
 
   ##### GEOCODING
