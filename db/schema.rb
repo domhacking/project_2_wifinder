@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141111093759) do
+ActiveRecord::Schema.define(:version => 20141113112244) do
 
   create_table "cafes", :force => true do |t|
     t.string   "cafe_name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20141111093759) do
     t.string   "wifi_password"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "cafe_image"
   end
 
   create_table "cafes_user", :force => true do |t|

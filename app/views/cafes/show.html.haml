@@ -9,7 +9,14 @@
       %b= @cafe.building_number + ' ' + @cafe.street_name + ', ' + @cafe.postcode
     %p
       %b= @cafe.opening_hours
-  %h3 ***IMAGE TO GO HERE**
+  %h3 
+    -if cafe_image.thumb.url.present?
+      %b = image_tag @cafe.cafe_image.url
+    -else 
+      = image_tag("default_cafe.png")
+
+
+
   #cafe_blurb
     %p
       %b= @cafe.cafe_description
