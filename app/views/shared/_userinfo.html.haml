@@ -7,23 +7,20 @@
           = image_tag(current_user.profile_image.thumb.url)
         -else 
           = image_tag("default.png")
-          
-      %p
-        %b User Name:
-        = current_user.name
+      .userinfo      
+        %p
+          %b Name:
+          = current_user.name
 
-      %p
-        %b Email:
-        = current_user.email
-
-    %input#searchbox.form-control{:placeholder => "Search", :type => "text"}
-  
-    .btn
-      = link_to 'FIND ME A CAFE', cafes_path
-    .btn  
-      = link_to 'EDIT MY PROFILE', edit_user_registration_path
-      / = link_to 'MY FAVOURITES', _path
-         
-
+        %p
+          %b Email:
+          = current_user.email
+    .buttons    
+      .btn
+        = link_to 'CAFE NEAR ME', cafes_path
+      .btn  
+        = link_to 'EDIT MY PROFILE', edit_user_registration_path
+      .btn     
+        = link_to 'MY FAVOURITES', cafes_path
 
 
