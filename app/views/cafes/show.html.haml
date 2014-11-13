@@ -39,10 +39,10 @@
 
   #favorite
     - if current_user
-      # - if is_favorite?(@cafe, current_user)
-        = link_to "Add to favorites",   favorite_cafe_path(@cafe, type: "favorite"), method: :put
-      - else
+      - if is_favorite?(@cafe, current_user)
         = link_to "Remove from favorites", favorite_cafe_path(@cafe, type: "unfavorite"), method: :put
+      - else
+        = link_to "Add to favorites",   favorite_cafe_path(@cafe, type: "favorite"), method: :put
   #links
     = link_to 'Edit', edit_cafe_path(@cafe)
     \|

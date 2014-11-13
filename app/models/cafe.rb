@@ -27,9 +27,6 @@ class Cafe < ActiveRecord::Base
     end
   end
 
-  def is_favorite?(cafe, user)
-    binding.pry
-    puts cafe
-  end
+
 
 end
