@@ -140,7 +140,7 @@
   }
 
   .navbar-inner{
-    height: 150px;
+    height: 125px;
     background-color: black;
     background-image: none;
   }
@@ -155,7 +155,7 @@
     width: 319px;
     margin: 0 auto;
     vertical-align: middle;
-    padding: 35px;
+    padding: 25px;
   }
 
   a{
@@ -200,7 +200,8 @@
     margin-top: 15px;
     border-radius: 20px;
     text-align: center;
-    min-height: 509px;
+    min-height: 550px;
+    margin-bottom: 15px;
   }
 
   .twitter{
@@ -214,7 +215,7 @@
   }
 
   .extras{
-    height: 165px;
+    height: 205px;
     background-color: white;
     border-radius: 15px;
     color: black;
@@ -236,7 +237,8 @@
     padding-bottom: 15px;
     margin-top: 15px;
     border-radius: 20px;
-    min-height: 509px;
+    min-height: 550px;
+    margin-bottom: 15px;
   }
 
   .span3#right{
@@ -248,7 +250,8 @@
     padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
-    max-height: 509px;
+    max-height: 550px;
+    margin-bottom: 15px;
 
   }
 
