@@ -17,15 +17,8 @@
             .row1
               .user-nav
                 - if user_signed_in?
-                  Logged in as
-                  %b= current_user.email
-                  = link_to 'Edit Profile', edit_user_registration_path
-                  \|
                   = link_to 'Logout',  destroy_user_session_path, method: :delete
-                - else
-                  = link_to 'Sign up', new_user_registration_path
-                  \|
-                  = link_to 'Login', new_user_session_path
+            
             .row2
               = link_to image_tag( 'wifinder_logo.png'), 'https://blooming-journey-8960.herokuapp.com'
               
@@ -37,14 +30,14 @@
         - if user_signed_in?
           = render 'shared/userinfo'
         - else
-          = yield :left
+        .signup
+          .btn
+            = link_to 'Sign up', new_user_registration_path
+          .btn      
+            = link_to 'Login', new_user_session_path
     .row2-fluid      
       .span6#center
         = yield :center
-        / - if user_signed_in?
-        /   = yield :center
-        / - else
-        /   = render 'shared/map'
     .row3-fluid
       .span3#right
         .twitter
