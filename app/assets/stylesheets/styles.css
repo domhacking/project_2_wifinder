@@ -1,205 +1,360 @@
+@media (max-width: 480px){
+  body {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .navbar-inner{
+    height: 100%;
+    background-color: black;
+    background-image: none;
+  }
+
+  .row1{
+    background-color: black;
+    color: white;
+  }
+
+  .row2 img{
+    height: 54px;
+    width: 319px;
+    margin: 0 auto;
+    vertical-align: middle;
+    padding: 35px;
+  }
+
+  a{
+    color: black;
+  }
+
+  a:visited{
+    color: black;
+  }
+
+  a:hover { 
+    background-color: transparent;
+  }
+
+  .buttons{ 
+    
+    display: inline-block;
+    width: 200px;
+  }
 
 
-body {
-  margin: 0;
-  padding: 0;
-}
 
-.navbar-inner{
-  height: 150px;
-  background-color: black;
-  background-image: none;
-}
+  .user-nav b{
+    color:white;
+    padding: 10px;
+    position: left;
+  }
 
-.row1{
-  background-color: black;
-  color: white;
-}
+  #container{
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+  }
 
-.row2 img{
-  height: 54px;
-  width: 319px;
-  margin: 0 auto;
-  vertical-align: middle;
-  padding: 35px;
-}
+  .span3#left{
+    margin: 0 auto;
+    width: 90%;
+    background-color: #4B4D4C;
+    color: white;
+    display: block;
+    /*float: left;*/
+    padding-top: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    text-align: center;
+    min-height: 509px;
+  }
 
-a{
-  color: black;
-}
+  .twitter{
+    height: 300px;
+    background-color: white;
+    border-radius: 15px;
+    color: black;
+    margin-bottom: 15px;
+  }
 
-a:visited{
-  color: black;
-}
+  .extras{
+    height: 165px;
+    background-color: white;
+    border-radius: 15px;
+    color: black;
+    padding-top: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+  }
 
-a:hover { 
-  background-color: transparent;
-}
+  .span6#center{
+    margin: 0 auto ;
+    width: 90%;
+    background-color: #4B4D4C;
+    color: white;
+    display: block;
+    /*float: left;*/
+    padding-top: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    min-height: 509px;
+  }
 
-.user-nav b{
-  color:white;
-  padding: 10px;
-  position: left;
-}
+  .span3#right{
+    margin: 0 auto;
+    width: 90%;
+    background-color: #4B4D4C;
+    color: white;
+    display: block;
+    /*float: right;*/
+    padding: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    max-height: 550px;
+  }
 
-.user-nav a{
-  color:white;
-  padding: 10px;
-}
-
-#container{
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
-}
-
-.span3#left{
-  width: 21%;
-  background-color: #4B4D4C;
-  color: white;
-  display:inline-block;
-  /*float: left;*/
-  padding-top: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  margin-top: 15px;
-  border-radius: 20px;
-  text-align: center;
-  min-height: 509px;
-}
-
-.twitter{
-  height: 300px;
-  background-color: white;
-  border-radius: 15px;
-  color: black;
-  margin-bottom: 15px;
-
-}
-
-.extras{
-  height: 165px;
-  background-color: white;
-  border-radius: 15px;
-  color: black;
-  padding-top: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-}
-
-.span6#center{
-  width: 42%;
-  background-color: #4B4D4C;
-  color: white;
-  display:inline-block;
-  /*float: left;*/
-  padding-top: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  margin-top: 15px;
-  border-radius: 20px;
-  min-height: 509px;
-}
-
-.span3#right{
-  width: 21%;
-  background-color: #4B4D4C;
-  color: white;
-  display:inline-block;
-  /*float: right;*/
-  padding: 15px;
-  margin-top: 15px;
-  border-radius: 20px;
-  max-height: 509px;
-
-}
-
-
-h1{
-  font-family: 'Questrial', sans-serif;
-  text-transform: uppercase;
-  font-size: 24px;
-  text-align: center;
-}
-
-
-p{
-  font-family: 'Questrial', sans-serif;
-  font-size: 14px;
-}
-
-#cafe_header{
-  text-align: center;
-}
-
-#cafe_header p{
-  line-height: 70%;
-  font-size: 11px;
-}
-
-#cafe_blurb{
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-#cafe_blurb p{
-  font-style: italic;
-  font-size: 18px;
-  text-align: center;
-}
-
-#cafe_contact_details p{
-  color:#169E93;
-  line-height: 70%
-}
-
-#wifi_details{
-  background-color: grey;
-  padding: 10px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  border-style: dotted;
-  border-color: white;
-  border-width: 2px;
-  border-radius: 5px;
-  display: inline-block
+  h1{
+    font-family: 'Questrial', sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;
+  }
 
 }
 
-#wifi_details p{
-  line-height: 70%;
-  font-size: 17px;
-  /*text-align: center;*/
-}
-
-.row{
-  margin: 0 auto;
-}
 
 
-th{
-  text-align: left;
-  padding: 5px;
+
+@media (min-width: 480px){
+  body {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .navbar-inner{
+    height: 150px;
+    background-color: black;
+    background-image: none;
+  }
+
+  .row1{
+    background-color: black;
+    color: white;
+  }
+
+  .row2 img{
+    height: 54px;
+    width: 319px;
+    margin: 0 auto;
+    vertical-align: middle;
+    padding: 35px;
+  }
+
+  a{
+    color: black;
+  }
+
+  a:visited{
+    color: black;
+  }
+
+  a:hover { 
+    background-color: transparent;
+  }
+
+  .user-nav b{
+    color:white;
+    padding: 10px;
+    position: left;
+  }
+
+  .user-nav a{
+    color:white;
+    padding: 10px;
+  }
+
+  #container{
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+  }
+
+  .span3#left{
+    width: 21%;
+    background-color: #4B4D4C;
+    color: white;
+    display:inline-block;
+    /*float: left;*/
+    padding-top: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    text-align: center;
+    min-height: 509px;
+  }
+
+  .twitter{
+    height: 300px;
+    background-color: white;
+    border-radius: 15px;
+    color: black;
+    margin-bottom: 15px;
+
+
+  }
+
+  .extras{
+    height: 165px;
+    background-color: white;
+    border-radius: 15px;
+    color: black;
+    padding-top: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+  }
+
+  .span6#center{
+    width: 42%;
+    background-color: #4B4D4C;
+    color: white;
+    display:inline-block;
+    /*float: left;*/
+    padding-top: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    min-height: 509px;
+  }
+
+  .span3#right{
+    width: 21%;
+    background-color: #4B4D4C;
+    color: white;
+    display:inline-block;
+    /*float: right;*/
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    max-height: 509px;
+
+  }
+
+
+  h1{
+    font-family: 'Questrial', sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;
+  }
+
+
+  p{
+    font-family: 'Questrial', sans-serif;
+    font-size: 14px;
+  }
+
+  #cafe_header{
+    text-align: center;
+  }
+
+  #cafe_header p{
+    line-height: 70%;
+    font-size: 11px;
+  }
+
+  #cafe_blurb{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  #cafe_blurb p{
+    font-style: italic;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #cafe_contact_details p{
+    color:#169E93;
+    line-height: 70%
+  }
+
+  #wifi_details{
+    background-color: grey;
+    padding: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-style: dotted;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 5px;
+    display: inline-block
+
+  }
+
+  #wifi_details p{
+    line-height: 70%;
+    font-size: 17px;
+    /*text-align: center;*/
+  }
+
+  .row{
+    margin: 0 auto;
+  }
+
+
+  th{
+    text-align: left;
+    padding: 5px;
+  }
+
+  .circular a img{
+    margin: 15px;
+    position: center;
+    height: 150px;
+    width: 150px;
+  }
+
+  .buttons{ 
+    display: inline-block;
+    width: 200px;
+    margin-top: 10px; 
+  }
+
+  .btn{
+    margin: 12px;
+  }
+
+  h3{
+    font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+
+
+  /*MAP 'You are here' sign*/
+  .gm-style-iw{
+    color:black;
+  }
 }
 
-.circular a img{
-  margin: 15px;
-  position: center;
-  height: 150px;
-  width: 150px;
-}
 
-h3{
-  font-size: 25px;
-  margin-top: 40px;
-  margin-bottom: 10px;
-  text-align: center;
-}
 
-/*MAP 'You are here' sign*/
-.gm-style-iw{
-  color:black;
-}
+
+
+
+
