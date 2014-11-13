@@ -353,6 +353,19 @@
   .gm-style-iw{
     color:black;
   }
+
+  /*MAP - CAFE NAME WHEN LOGO CLICKED*/
+  .cafeHeading{
+    font-size: 12px;
+    font-family: 'Questrial', sans-serif;
+    text-transform: none;
+    line-height: 25%;
+  }
+
+  #content{
+    padding: 0px;
+    margin: 0px;
+  }
 }
 
 

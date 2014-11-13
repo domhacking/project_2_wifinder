@@ -73,20 +73,35 @@ $(document).ready(function(){
       var listArea = $(".extras ul")
       listArea.empty()
       $.each( data, function( key, val ) {
-        addMarker(val.latitude, val.longitude)
+        addMarker(val.latitude, val.longitude, val.cafe_name)
         addListItem(listArea, val)
       });
     })
   }
 
-  function addMarker(lat, lon) {
+  function addMarker(lat, lon, cafe_name){
+
+    var contentString = '<div id="content">'+
+    '<h1 id="cafeHeading" class="cafeHeading">'+cafe_name+ '</h1>'+
+    '</div>';
+
+    var infoWindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
     var marker = new google.maps.Marker({
       icon: "http://i.imgur.com/JSuU8xs.png",
       map: map,
       position: new google.maps.LatLng(lat, lon)
     });
     markers.push(marker);
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infoWindow.open(map,marker);
+    });
   }
+
+
 
   function addListItem(listArea, cafe){
     var listItem = "<li><a class='cafe' href='/cafes/" + cafe.id + "''>" + cafe.cafe_name + "</a></li>"
