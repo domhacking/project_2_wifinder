@@ -1,6 +1,3 @@
-/hack for google maps markers
-- if @cafes
-  %p @cafes
 
 - content_for :center do
   = render 'shared/map'
@@ -9,8 +6,9 @@
   %ul
 
   %br
+  - if user_signed_in?
+    = link_to 'New Cafe', new_cafe_path
 
-  = link_to 'New Cafe', new_cafe_path
 
 
 

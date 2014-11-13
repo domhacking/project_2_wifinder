@@ -10,8 +10,9 @@ class User < ActiveRecord::Base
 
   mount_uploader :profile_image, ProfileImageUploader
 
-  has_many :cafe_users
-  has_many :cafes, through: :cafe_users
+  has_many :cafes
+  has_many :favorite_cafes
+  # has_many :favorites, through: :favorite_cafes
 
 end
 
