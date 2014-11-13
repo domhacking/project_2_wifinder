@@ -33,9 +33,10 @@ class CafesController < ApplicationController
 
   def index
     @cafes = Cafe.all
-    
-    if current_user.favorite_cafes.any?
-      @faves = Cafe.findFaves(current_user)
+    if current_user
+      if current_user.favorite_cafes.any?
+        @faves = Cafe.findFaves(current_user)
+      end
     end
     # binding.pry
     
