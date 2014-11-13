@@ -82,11 +82,17 @@ $(document).ready(function(){
   function addMarker(lat, lon, cafe_name){
 
     var contentString = '<div id="content">'+
-    '<h1 id="cafeHeading" class="cafeHeading">'+cafe_name+ '</h1>'+
+    '<p id="cafeHeading" class="cafeHeading">'+cafe_name+ '</p>'+
     '</div>';
 
+    /*
     var infoWindow = new google.maps.InfoWindow({
-      content: contentString
+      content: '<a href="/cafes/' + cafe.id + '">' + cafe.cafe_name + '</a>'
+    });*/
+
+    var infoWindow = new google.maps.InfoWindow({
+      content: contentString,
+      maxWidth: 85
     });
 
     var marker = new google.maps.Marker({
