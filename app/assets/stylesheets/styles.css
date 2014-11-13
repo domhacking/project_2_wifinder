@@ -28,13 +28,24 @@
     font-family: verdana, arial, helvetica, sans-serif;
   }
 
+  a:active { 
+    color: black;
+    background-color: transparent;
+  }
+  a:hover { 
+    color: black;
+    background-color: transparent;
+  }
+  a:visited { 
+    color: black;
+    background-color: transparent;
+  }
+
   a:visited{
     color: black;
   }
 
-  a:hover { 
-    background-color: transparent;
-  }
+
 
   .buttons{ 
     
@@ -63,18 +74,15 @@
     color: white;
     display: block;
     /*float: left;*/
-    padding-top: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
     text-align: center;
-    min-height: 509px;
+    min-height: 700px;
   }
 
   .twitter{
-    height: 300px;
+    height: 350px;
     background-color: white;
     border-radius: 15px;
     color: black;
@@ -82,14 +90,16 @@
   }
 
   .extras{
-    height: 165px;
+    min-height: 300px;
     background-color: white;
     border-radius: 15px;
     color: black;
-    padding-top: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
+  }
+
+  .extras img{
+    width: 100%;
+    border-radius: 10px;
   }
 
   .span6#center{
@@ -99,13 +109,10 @@
     color: white;
     display: block;
     /*float: left;*/
-    padding-top: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding: 15px
     margin-top: 15px;
     border-radius: 20px;
-    min-height: 509px;
+    min-height: 700px;
   }
 
   .span3#right{
@@ -119,7 +126,7 @@
     margin-bottom: 15px;
     margin-top: 15px;
     border-radius: 20px;
-    max-height: 550px;
+    min-height: 700px;
   }
 
   h1{
@@ -164,16 +171,21 @@
     padding: 25px;
   }
 
-  a{
-    color: white;
+  a:active { 
+    color: black;
+    background-color: transparent;
+  }
+  a:hover { 
+    color: black;
+    background-color: transparent;
+  }
+  a:visited { 
+    color: black;
+    background-color: transparent;
   }
 
   a:visited{
-    color: white;
-  }
-
-  a:hover { 
-    background-color: transparent;
+    color: black;
   }
 
   .user-nav b{
@@ -199,14 +211,11 @@
     color: white;
     display:inline-block;
     /*float: left;*/
-    padding-top: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
     text-align: center;
-    min-height: 550px;
+    min-height: 700px;
     margin-bottom: 15px;
   }
 
@@ -216,13 +225,10 @@
     color: white;
     display:inline-block;
     /*float: left;*/
-    padding-top: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
-    min-height: 550px;
+    min-height: 700px;
     margin-bottom: 15px;
   }
 
@@ -235,8 +241,7 @@
     padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
-    max-height: 535px;
-    min-height: 535px;
+    min-height: 700px;
     margin-bottom: 15px;
 
   }
@@ -254,14 +259,14 @@
   }
 
   .extras{
-    min-height: 230px;
+    min-height: 300px;
     background-color: white;
     border-radius: 15px;
     color: black;
-    padding-top: 1px;
-/*    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;*/
+    padding-top: 15px;
+    padding-left: 15px;/*
+    padding-right: 15px;*/
+    padding-bottom: 15px;
     margin-top: 15px;
     margin-bottom: 15px;
     padding-left: 15px;
@@ -273,6 +278,11 @@
     list-style-image: url('http://i.imgur.com/TqrNuHz.png');
     text-decoration: underline;
     line-height: 28px;
+  }
+
+  .extras img{
+    width: 100%;
+    border-radius: 10px;
   }
 
   .extras ul li a{

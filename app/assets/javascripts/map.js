@@ -15,8 +15,9 @@ $(document).ready(function(){
   //Initialising map once the page has loaded
   mapApp.initializeMap = function(){
     mapOptions = {
-      zoom: 15,
-      mapTypeId:google.maps.MapTypeId.ROADMAP
+      zoom: 14,
+      mapTypeId:google.maps.MapTypeId.ROADMAP,
+      disableDefaultUI: true
     };
 
     canvas = $("#googleMap")[0];
@@ -73,22 +74,20 @@ $(document).ready(function(){
       var listArea = $(".extras ul")
       listArea.empty()
       $.each( data, function( key, val ) {
-        addMarker(val.latitude, val.longitude, val.cafe_name)
+        addMarker(val)
         addListItem(listArea, val)
       });
     })
   }
 
-  function addMarker(lat, lon, cafe_name){
+  function addMarker(cafe){
+    var lat = cafe.latitude
+    var lon = cafe.longitude
+    var name = cafe.cafe_name
+    var id = cafe.id
 
-    var contentString = '<div id="content">'+
-    '<p id="cafeHeading" class="cafeHeading">'+cafe_name+ '</p>'+
-    '</div>';
-
-    /*
-    var infoWindow = new google.maps.InfoWindow({
-      content: '<a href="/cafes/' + cafe.id + '">' + cafe.cafe_name + '</a>'
-    });*/
+    var contentString = "<div id='content'><a class='cafe' href='/cafes/" + id + "''>" + name + "</a></div>"
+    
 
     var infoWindow = new google.maps.InfoWindow({
       content: contentString,
@@ -106,8 +105,6 @@ $(document).ready(function(){
       infoWindow.open(map,marker);
     });
   }
-
-
 
   function addListItem(listArea, cafe){
     var listItem = "<li><a class='cafe' href='/cafes/" + cafe.id + "''>" + cafe.cafe_name + "</a></li>"
@@ -128,7 +125,7 @@ $(document).ready(function(){
     // FIT THE BOUNDS OF THE MAP AROUND THIS OBjECT
     map.fitBounds(bounds);
     // SETTING HOW ZOOMED THE RESULTS ARE
-    map.setZoom(15);
+    map.setZoom(14);
     mapApp.updateMap();
   }
 
