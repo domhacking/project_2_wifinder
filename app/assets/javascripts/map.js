@@ -81,6 +81,7 @@ $(document).ready(function(){
 
   function addMarker(lat, lon) {
     var marker = new google.maps.Marker({
+      icon: "http://i.imgur.com/JSuU8xs.png",
       map: map,
       position: new google.maps.LatLng(lat, lon)
     });
