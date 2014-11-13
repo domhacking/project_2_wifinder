@@ -3,18 +3,27 @@ class CafesController < ApplicationController
   before_filter :authenticate_user!, except: [:index]
   respond_to :html, :json
 
+  helper_method :is_favorite?
+
+  def is_favorite?(cafe, user)
+    faves = user.favorite_cafes.map do |fave|
+      fave.cafe_id
+    end
+    faves.include?(cafe.id)
+  end
+  
   # Add and remove favorite cafes for current_user
   def favorite
     type = params[:type]
     @cafe = Cafe.find(params[:id])
     if type == "favorite"
       current_user.favorite_cafes.create(cafe_id: params[:id])
-      redirect_to :back, notice: "You favorited #{@cafe.cafe_name}"
+      redirect_to :back
 
     elsif type == "unfavorite"
       @fave = current_user.favorite_cafes.where(cafe_id: params[:id]).first
       @fave.delete
-      redirect_to :back, notice: "Unfavorited #{@cafe.cafe_name}"
+      redirect_to :back
 
     else
       # Type missing, nothing happens
@@ -74,7 +83,7 @@ class CafesController < ApplicationController
   end
 
   private
-    def set_cafe
-      @cafe = Cafe.find(params[:id])
-    end
+  def set_cafe
+    @cafe = Cafe.find(params[:id])
+  end
 end
