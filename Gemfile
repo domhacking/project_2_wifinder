@@ -11,6 +11,7 @@ gem 'letter_opener', :group => :development
 gem 'devise'
 gem 'haml-rails'
 gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
 gem 'geocoder'
 gem "rails_12factor", group: :production
 gem 'carrierwave', '0.9.0'  
