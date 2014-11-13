@@ -48,6 +48,5 @@ class User < ActiveRecord::Base
       end
     end
   end
->>>>>>> 3262f55b67abec4946135d08482acf066550877e
 end
 
