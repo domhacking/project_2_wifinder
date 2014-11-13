@@ -16,9 +16,7 @@
           .text-center
             .row1
               .user-nav
-                - if user_signed_in?
-                  = link_to 'Logout',  destroy_user_session_path, method: :delete
-            
+                
             .row2
               = link_to image_tag( 'wifinder_logo.png'), 'https://blooming-journey-8960.herokuapp.com'
               
