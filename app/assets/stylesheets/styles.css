@@ -137,9 +137,15 @@
   }
 
   .signup{
-    display: block;
-    width: 200px;
+    width: 105px;
+    margin: 0 auto;
+    margin-top: 210px;
   }
+
+  .btn{
+    margin-top: 15px;
+  }
+
 
 }
 
