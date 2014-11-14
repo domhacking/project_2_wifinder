@@ -28,11 +28,7 @@
     font-family: verdana, arial, helvetica, sans-serif;
   }
 
-  a:active { 
-    color: black;
-    background-color: transparent;
-  }
-  a:hover { 
+  a:link { 
     color: black;
     background-color: transparent;
   }
@@ -40,10 +36,15 @@
     color: black;
     background-color: transparent;
   }
-
-  a:visited{
+  a:hover { 
     color: black;
+    background-color: transparent;
   }
+  a:active { 
+    color: black;
+    background-color: transparent;
+  }
+
 
 
 
@@ -171,11 +172,7 @@
     padding: 25px;
   }
 
-  a:active { 
-    color: black;
-    background-color: transparent;
-  }
-  a:hover { 
+  a:link { 
     color: black;
     background-color: transparent;
   }
@@ -183,9 +180,13 @@
     color: black;
     background-color: transparent;
   }
-
-  a:visited{
+  a:hover { 
     color: black;
+    background-color: transparent;
+  }
+  a:active { 
+    color: black;
+    background-color: transparent;
   }
 
   .user-nav b{
