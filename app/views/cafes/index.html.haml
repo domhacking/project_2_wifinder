@@ -1,6 +1,9 @@
 
 - content_for :center do
-  = render 'shared/map'
+  - if user_signed_in?
+    = render 'shared/map'
+  - else
+    %img{:id => "front_page_map", :alt => "staticmap", :src => "https://maps.googleapis.com/maps/api/staticmap?center=53.479295,-2.243848&zoom=16&size=500x500&maptype=roadmap&markers=color:blue%7C%7C53.479295,-2.243848"}
 - content_for :right do
   %h1 Cafes near you:
   %ul
