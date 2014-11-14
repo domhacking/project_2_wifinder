@@ -37,7 +37,8 @@
               = link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2)
     .row2-fluid      
       .span6#center
-        = yield :center
+        = yield :center  
+
     .row3-fluid
       .span3#right
         .twitter
@@ -47,13 +48,6 @@
         - if user_signed_in?
           .extras
             = yield :right
-
-      / .span3#right
-      /   .twitter
-      /     %p Twitter feed will go here
-      /   .extras
-      / - if user_signed_in?
-      / = yield :right
 
 
 
