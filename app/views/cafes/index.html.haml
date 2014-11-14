@@ -9,7 +9,7 @@
         - @faves.each do |fave|
           %ul
             %li
-              %a.cafe{:href => "/cafes/#{fave.cafe_name}"}= fave.cafe_name
+              %a.cafe{:href => "/cafes/#{fave.id}"}= fave.cafe_name
         
   - else
     %img{:id => "front_page_map", :alt => "staticmap", :src => "https://maps.googleapis.com/maps/api/staticmap?center=53.479295,-2.243848&zoom=16&size=500x500&maptype=roadmap&markers=color:blue%7C%7C53.479295,-2.243848"}
