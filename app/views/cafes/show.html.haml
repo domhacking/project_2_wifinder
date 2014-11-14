@@ -13,9 +13,9 @@
   %h3
     .cafeimages 
       -if @cafe.cafe_image.thumb.url.present?
-        = image_tag @cafe.cafe_image.thumb.url
-      -else 
-        = image_tag 'default_cafe.png'
+        %b= image_tag @cafe.cafe_image.thumb.url
+      - else
+        =image_tag("default_cafe.png")
 
   #cafe_blurb
     %p
@@ -55,6 +55,6 @@
 
 
 - content_for :right do
-  = render 'shared/map'
+  %img{:alt => "staticmap", :src => "https://maps.googleapis.com/maps/api/staticmap?center=#{@cafe.latitude},#{@cafe.longitude}&zoom=16&size=300x300&maptype=roadmap&markers=color:blue%7C%7C#{@cafe.latitude},#{@cafe.longitude}"}
 
 
