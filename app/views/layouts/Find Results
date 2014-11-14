@@ -1,0 +1,220 @@
+Searching 184 files for "= yield :center "
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/layouts/application.html.haml:
+   41        .span6#center
+   42          - if user_signed_in?
+   43:           = yield :center  
+   44  
+   45          - else
+
+1 match in 1 file
+
+
+Searching 184 files for "center"
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/assets/javascripts/map.js:
+   25        mapOptions);
+   26  
+   27:     // this will center the map on the user's location if they have geolocation enabled
+   28      if(navigator.geolocation) {
+   29        navigator.geolocation.getCurrentPosition(function(position) {
+   ..
+   37          });
+   38  
+   39:         map.setCenter(pos);
+   40        }, function() {
+   41          handleNoGeolocation(true);
+   ..
+   59  
+   60        var infowindow = new google.maps.InfoWindow(options);
+   61:       map.setCenter(options.position);
+   62      }
+   63    };
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/assets/stylesheets/styles.css:
+   78      margin-top: 15px;
+   79      border-radius: 20px;
+   80:     text-align: center;
+   81      min-height: 700px;
+   82    }
+   ..
+  103    }
+  104  
+  105:   .span6#center{
+  106      margin: 0 auto ;
+  107      width: 90%;
+  ...
+  134      text-transform: uppercase;
+  135      font-size: 24px;
+  136:     text-align: center;
+  137    }
+  138  
+  ...
+  215      margin-top: 15px;
+  216      border-radius: 20px;
+  217:     text-align: center;
+  218      min-height: 700px;
+  219      margin-bottom: 15px;
+  220    }
+  221  
+  222:   .span6#center{
+  223      width: 42%;
+  224      background-color: #4B4D4C;
+  ...
+  297      text-transform: uppercase;
+  298      font-size: 24px;
+  299:     text-align: center;
+  300      line-height: 24px;
+  301    }
+  ...
+  305      text-transform: uppercase;
+  306      font-size: 24px;
+  307:     text-align: center;
+  308    }*/
+  309  
+  ...
+  314  
+  315    #cafe_header{
+  316:     text-align: center;
+  317    }
+  318  
+  ...
+  330      font-style: italic;
+  331      font-size: 18px;
+  332:     text-align: center;
+  333    }
+  334  
+  ...
+  353      line-height: 70%;
+  354      font-size: 17px;
+  355:     /*text-align: center;*/
+  356    }
+  357  
+  ...
+  379    .circular a img{
+  380      margin: 15px;
+  381:     position: center;
+  382      height: 150px;
+  383      width: 150px;
+  ...
+  412      margin-top: 40px;
+  413      margin-bottom: 10px;
+  414:     text-align: center;
+  415    }
+  416  
+  ...
+  424    .gm-style-iw{
+  425      color:black;
+  426:     text-align: center;
+  427    }
+  428  
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/cafes/edit.html.haml:
+    1: - content_for :center do
+    2    %h1 Editing cafe
+    3  
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/cafes/index.html.haml:
+    1  
+    2: - content_for :center do
+    3    = render 'shared/map'
+    4  - content_for :right do
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/cafes/new.html.haml:
+    1: - content_for :center do
+    2    %h1 New cafe
+    3  
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/cafes/show.html.haml:
+    1: - content_for :center do
+    2    %p#notice= notice
+    3  
+    .
+   54  
+   55  - content_for :right do
+   56:   %img{:alt => "staticmap", :src => "https://maps.googleapis.com/maps/api/staticmap?center=#{@cafe.latitude},#{@cafe.longitude}&zoom=16&size=300x300&maptype=roadmap&markers=color:blue%7C%7C#{@cafe.latitude},#{@cafe.longitude}"}
+   57  
+   58  
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/devise/confirmations/new.html.haml:
+    1: - content_for :center do  
+    2    %h2 Resend confirmation instructions
+    3    = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/devise/passwords/edit.html.haml:
+    1: - content_for :center do  
+    2    %h2 Change your password
+    3    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/devise/passwords/new.html.haml:
+    1: - content_for :center do 
+    2    %h2 Forgot your password?
+    3    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/devise/registrations/edit.html.haml:
+    1: - content_for :center do 
+    2    %h2
+    3      Edit #{resource_name.to_s.humanize}
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/devise/registrations/new.html.haml:
+    1: - content_for :center do  
+    2    %h2 Sign up
+    3    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/devise/sessions/new.html.haml:
+    1: - content_for :center do  
+    2    %h2 Log in
+    3    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/layouts/application.html.haml:
+   14        .navbar-inner
+   15          %ul.nav
+   16:           .text-center
+   17              .row1
+   18                .user-nav
+   ..
+   39                = link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2)
+   40      .row2-fluid      
+   41:       .span6#center
+   42          - if user_signed_in?
+   43:           = yield :center  
+   44  
+   45          - else
+   46:           %img{:id => "front_page_map", :alt => "staticmap", :src => "https://maps.googleapis.com/maps/api/staticmap?center=53.479295,-2.243848&zoom=16&size=500x500&maptype=roadmap&markers=color:blue%7C%7C53.479295,-2.243848"}
+   47      .row3-fluid
+   48        .span3#right
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/users/index.html.haml:
+    1: - content_for :center do
+    2    %h1 Users
+    3    %ul
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/app/views/users/show.html.haml:
+   17            %b Favourites:
+   18  
+   19: - content_for :center do
+   20      = render 'shared/map'
+   21  
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/public/404.html:
+    4    <title>The page you were looking for doesn't exist (404)</title>
+    5    <style type="text/css">
+    6:     body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
+    7      div.dialog {
+    8        width: 25em;
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/public/422.html:
+    4    <title>The change you wanted was rejected (422)</title>
+    5    <style type="text/css">
+    6:     body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
+    7      div.dialog {
+    8        width: 25em;
+
+/Users/Beth/Desktop/General Assembly/wdi9/project_2/project_2_wifinder/public/500.html:
+    4    <title>We're sorry, but something went wrong (500)</title>
+    5    <style type="text/css">
+    6:     body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
+    7      div.dialog {
+    8        width: 25em;
+
+36 matches across 18 files

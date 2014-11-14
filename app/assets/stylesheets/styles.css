@@ -415,6 +415,10 @@
   }
 
 
+  #front_page_map{
+    width: 100%;
+    border-radius: 15px;
+  }
 
   /*MAP 'You are here' sign*/
   .gm-style-iw{
