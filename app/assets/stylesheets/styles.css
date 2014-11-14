@@ -111,8 +111,19 @@
     min-height: 700px;
   }
 
-  #favorites{
+  #favorites h1{
     text-align: left;
+  }
+
+
+  #favorites li{
+    list-style-image: url('http://i.imgur.com/2S8JKj2.png');
+    text-decoration: underline;
+    line-height: 20px;
+  }
+
+  #favorites li a{
+    color: white;
   }
 
   .span3#right{
@@ -232,8 +243,18 @@
     margin-bottom: 15px;
   }
 
-  #favorites{
+  #favorites h1{
     text-align: left;
+  }
+
+  #favorites li{
+    list-style-image: url('http://i.imgur.com/2S8JKj2.png');
+    text-decoration: underline;
+    line-height: 20px;
+  }
+
+  #favorites li a{
+    color: white;
   }
 
   .span3#right{
@@ -442,6 +463,8 @@
     text-transform: none;
     height: 10px;
   }
+
+
 }
 
 

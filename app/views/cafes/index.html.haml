@@ -4,11 +4,13 @@
     = render 'shared/map'
     / - binding.pry
     - if current_user.favorite_cafes.any?
-      %h1#favorites My Favorites
-      - @faves.each do |fave|
-        %li
-          %a.cafe{:href => "/cafes/#{fave.cafe_name}"}= fave.cafe_name
-      
+      #favorites
+        %h1 My Favorites
+        - @faves.each do |fave|
+          %ul
+            %li
+              %a.cafe{:href => "/cafes/#{fave.cafe_name}"}= fave.cafe_name
+        
   - else
     %img{:id => "front_page_map", :alt => "staticmap", :src => "https://maps.googleapis.com/maps/api/staticmap?center=53.479295,-2.243848&zoom=16&size=500x500&maptype=roadmap&markers=color:blue%7C%7C53.479295,-2.243848"}
 

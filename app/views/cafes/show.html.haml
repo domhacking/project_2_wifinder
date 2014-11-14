@@ -1,10 +1,14 @@
 - content_for :center do
   %p#notice= notice
 
-
   #cafe_header
     %h1
       %b= @cafe.cafe_name
+      - if current_user
+        - if is_favorite?(@cafe, current_user)
+          =image_tag("http://i.imgur.com/BSRtH8h.png")
+        -else
+          =image_tag("http://i.imgur.com/KieAEnX.png")
     %p
       %b= @cafe.building_number + ' ' + @cafe.street_name + ', ' + @cafe.postcode
     %p
@@ -42,9 +46,11 @@
   #favorite
     - if current_user
       - if is_favorite?(@cafe, current_user)
-        = link_to "Remove from favorites", favorite_cafe_path(@cafe, type: "unfavorite"), method: :put
+        .btn.favorite_btn
+          = link_to "Remove from favorites", favorite_cafe_path(@cafe, type: "unfavorite"), method: :put
       - else
-        = link_to "Add to favorites",   favorite_cafe_path(@cafe, type: "favorite"), method: :put
+        .btn.favorite_btn
+          = link_to "Add to favorites",   favorite_cafe_path(@cafe, type: "favorite"), method: :put
   
  
   #links
