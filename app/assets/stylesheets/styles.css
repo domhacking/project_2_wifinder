@@ -227,7 +227,6 @@
     background-color: #4B4D4C;
     color: white;
     display:inline-block;
-    /*float: left;*/
     padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
@@ -268,14 +267,12 @@
     background-color: #4B4D4C;
     color: white;
     display:inline-block;
-    /*float: right;*/
     padding: 15px;
     margin-top: 15px;
+    margin-bottom: 15px;
     border-radius: 20px;
     min-height: 700px;
-    margin-bottom: 15px;
   }
-
 
   .twitter{
     height: 45%;
@@ -291,17 +288,10 @@
     background-color: white;
     border-radius: 15px;
     color: black;
-    padding-top: 15px;
-    padding-left: 15px;/*
-    padding-right: 15px;*/
-    padding-bottom: 15px;
+    padding: 15px;
     margin-top: 15px;
     margin-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-
   }
-
 
   .extras li{
     list-style-image: url('http://i.imgur.com/TqrNuHz.png');
@@ -318,7 +308,6 @@
     color: black;
     font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /*font-weight: bold;*/
   }
 
   h1{
@@ -334,13 +323,6 @@
     width:  200px;
     height: 200px;
   }
-
-/*  h4{
-      font-family: 'Questrial', sans-serif;
-    text-transform: uppercase;
-    font-size: 24px;
-    text-align: center;
-  }*/
 
   p{
     font-family: 'Questrial', sans-serif;
@@ -387,28 +369,15 @@
   #wifi_details p{
     line-height: 70%;
     font-size: 17px;
-    /*text-align: center;*/
   }
-
-
 
   .row{
     margin: 0 auto;
   }
 
-
   th{
     text-align: left;
     padding: 5px;
-  }
-
-  .directions{
-    margin-top: 15px;
-  }
-
-  .directions p{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
   }
 
   .circular a img{
@@ -469,7 +438,6 @@
     text-transform: none;
     height: 10px;
   }
-
 
 }
 
