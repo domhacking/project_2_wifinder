@@ -40,7 +40,7 @@ class CafesController < ApplicationController
     end
     
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.js do
         ne = params[:ne].split(',').collect{|e|e.to_f}  
         sw = params[:sw].split(',').collect{|e|e.to_f}

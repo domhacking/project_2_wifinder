@@ -23,7 +23,6 @@
     padding: 35px;
   }
 
-
   a{
     color: black;
     font-family: verdana, arial, helvetica, sans-serif;
@@ -69,7 +68,6 @@
     background-color: #4B4D4C;
     color: white;
     display: block;
-    /*float: left;*/
     padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
@@ -104,7 +102,6 @@
     background-color: #4B4D4C;
     color: white;
     display: block;
-    /*float: left;*/
     padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
@@ -114,7 +111,6 @@
   #favorites h1{
     text-align: left;
   }
-
 
   #favorites li{
     list-style-image: url('http://i.imgur.com/2S8JKj2.png');
@@ -132,7 +128,6 @@
     background-color: #4B4D4C;
     color: white;
     display: block;
-    /*float: right;*/
     padding: 15px;
     margin-bottom: 15px;
     margin-top: 15px;
@@ -156,10 +151,7 @@
   .btn{
     margin-top: 15px;
   }
-
-
 }
-
 
 
 
@@ -227,7 +219,6 @@
     background-color: #4B4D4C;
     color: white;
     display:inline-block;
-    /*float: left;*/
     padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
@@ -241,7 +232,6 @@
     background-color: #4B4D4C;
     color: white;
     display:inline-block;
-    /*float: left;*/
     padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
@@ -268,14 +258,12 @@
     background-color: #4B4D4C;
     color: white;
     display:inline-block;
-    /*float: right;*/
     padding: 15px;
     margin-top: 15px;
     border-radius: 20px;
     min-height: 700px;
     margin-bottom: 15px;
   }
-
 
   .twitter{
     height: 45%;
@@ -292,16 +280,8 @@
     border-radius: 15px;
     color: black;
     padding-top: 15px;
-    padding-left: 15px;/*
-    padding-right: 15px;*/
-    padding-bottom: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
     padding-left: 15px;
-    padding-right: 15px;
-
   }
-
 
   .extras li{
     list-style-image: url('http://i.imgur.com/TqrNuHz.png');
@@ -318,7 +298,6 @@
     color: black;
     font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /*font-weight: bold;*/
   }
 
   h1{
@@ -334,13 +313,6 @@
     width:  200px;
     height: 200px;
   }
-
-/*  h4{
-      font-family: 'Questrial', sans-serif;
-    text-transform: uppercase;
-    font-size: 24px;
-    text-align: center;
-  }*/
 
   p{
     font-family: 'Questrial', sans-serif;
@@ -387,15 +359,11 @@
   #wifi_details p{
     line-height: 70%;
     font-size: 17px;
-    /*text-align: center;*/
   }
-
-
 
   .row{
     margin: 0 auto;
   }
-
 
   th{
     text-align: left;

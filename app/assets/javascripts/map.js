@@ -152,28 +152,4 @@ $(document).ready(function(){
     mapApp.searchMap();
   })
   
-  // mapApp.directions = function(){
-  //       var from = $('#directions_from').val();
-  //       var to = $('#directions_to').val();
-  //       var mode = $('#directions_mode').val();
-
-  //       var request = {
-  //         origin: from,
-  //         destination: to,
-  //         travelMode: google.maps.TravelMode[mode]
-  //       }
-
-  //       directionsDisplay.setMap(map);
-
-  //       directionsService.route(request, function(response, status){
-  //         if(status == google.maps.DirectionsStatus.OK){
-  //           directionsDisplay.setDirections(response);
-  //           $('#directions-panel').html('');
-  //           directionsDisplay.setPanel(document.getElementById('directions-panel'));
-  //         } else {
-  //           alert('Something went wrong!');
-  //         };
-  //       });
-  //     };
-  
 })
