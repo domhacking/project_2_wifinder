@@ -1,49 +1,16 @@
 @media (max-width: 480px){
-  body {
-    margin: 0 auto;
-    padding: 0;
-  }
 
   .navbar-inner{
     height: 100%;
-    background-color: black;
-    background-image: none;
-  }
-
-  .row1{
-    background-color: black;
-    color: white;
   }
 
   .row2 img{
-    height: 54px;
-    width: 319px;
-    margin: 0 auto;
-    vertical-align: middle;
     padding: 35px;
   }
-
 
   a{
     color: black;
     font-family: verdana, arial, helvetica, sans-serif;
-  }
-
-  a:link { 
-    color: black;
-    background-color: transparent;
-  }
-  a:visited { 
-    color: black;
-    background-color: transparent;
-  }
-  a:hover { 
-    color: black;
-    background-color: transparent;
-  }
-  a:active { 
-    color: black;
-    background-color: transparent;
   }
 
   .buttons{   
@@ -51,51 +18,10 @@
     width: 200px;
   }
 
-  .user-nav b{
-    color:white;
-    padding: 10px;
-    position: left;
-  }
-
-  #container{
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-  }
-
   .span3#left{
     margin: 0 auto;
     width: 90%;
-    background-color: #4B4D4C;
-    color: white;
     display: block;
-    /*float: left;*/
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 20px;
-    text-align: center;
-    min-height: 700px;
-  }
-
-  .twitter{
-    height: 350px;
-    background-color: white;
-    border-radius: 15px;
-    color: black;
-    margin-bottom: 15px;
-  }
-
-  .extras{
-    min-height: 300px;
-    background-color: white;
-    border-radius: 15px;
-    color: black;
-    padding: 15px;
-  }
-
-  .extras img{
-    width: 100%;
-    border-radius: 10px;
   }
 
   .span6#center{
@@ -111,41 +37,22 @@
     min-height: 700px;
   }
 
-  #favorites h1{
-    text-align: left;
-  }
-
-
-  #favorites li{
-    list-style-image: url('http://i.imgur.com/2S8JKj2.png');
-    text-decoration: underline;
-    line-height: 20px;
-  }
-
-  #favorites li a{
-    color: white;
-  }
-
-  .span3#right{
-    margin: 0 auto;
-    width: 90%;
-    background-color: #4B4D4C;
-    color: white;
-    display: block;
-    /*float: right;*/
-    padding: 15px;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    border-radius: 20px;
-    min-height: 700px;
-  }
-
   h1{
     font-family: 'Questrial', sans-serif;
     text-transform: uppercase;
     font-size: 24px;
     text-align: center;
   }
+
+ .span3#right{
+    margin: 0 auto;
+    width: 90%;
+    display: block;
+  }
+
+  .twitter{
+    height: 350px;
+   }
 
   .signup{
     width: 105px;
